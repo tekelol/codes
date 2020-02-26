@@ -28,7 +28,7 @@ final public class ConexionBBDD {
 	/**
 	 * Realiza la conexion a la BBDD
 	 * @return
-	 * @see InformeParametro
+	 * @see InformeParametroJasper
 	 */
 	public Connection conectar() {
 		String db = "jdbc:hsqldb:hsql://localhost/testdb;ifexists=true";
@@ -51,7 +51,7 @@ final public class ConexionBBDD {
 
 	/**
 	 * Desconexion de la BBDD
-	 * @see InformeParametro
+	 * @see InformeParametroJasper
 	 */
 	public void desconectar() {
 		if (conexion != null)
