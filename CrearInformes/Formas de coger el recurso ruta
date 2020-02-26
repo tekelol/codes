@@ -1,0 +1,24 @@
+// 1ª MANERA
+
+// Creamos un objeto JasperReport para pasarlo al JasperPrint y no pasar la ruta directamente
+
+			String path = "Informes/practicaInformes2.jasper";
+			// report = (JasperReport)
+			// JRLoader.loadObject(this.getClass().getResource("Informes/ejercicio1.jasper"));
+			report = (JasperReport) JRLoader.loadObjectFromFile(path);
+			JasperPrint print = JasperFillManager.fillReport(report, parametros, conexion.getConexion());
+			JasperViewer.viewReport(print, false);
+			
+// 2ª MANERA
+			// Creamos un objeto InputStream y se lo pasamos
+
+			// InputStream
+			// informe=getClass().getResourceAsStream("Informes/ejercicio1.jasper");
+			// JasperPrint print2 = JasperFillManager.fillReport(informe, parametros,
+			// connection);
+			// JasperViewer.viewReport(print2,false);
+			// JasperExportManager.exportReportToPdfFile(print2, "Informes/ejercicio1.pdf");
+
+// 3ª MANERA: Pasarle la ruta a pelo
+			// JasperPrint print =JasperFillManager.fillReport("Informes/ejercicio1.jasper",
+			// parametros,connection);
